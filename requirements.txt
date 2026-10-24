@@ -1,0 +1,83 @@
+
+# ==========================================
+# Finlytics - Environment & Configuration
+# ==========================================
+python-dotenv
+pydantic
+pydantic-settings
+
+# ==========================================
+# Backend - FastAPI
+# ==========================================
+fastapi
+uvicorn[standard]
+python-multipart
+httpx
+tenacity
+email-validator
+
+# ==========================================
+# Frontend - Streamlit
+# ==========================================
+streamlit
+requests
+plotly
+altair
+
+# ==========================================
+# Database - SQLite
+# ==========================================
+sqlalchemy
+alembic
+
+# ==========================================
+# LLM & Agent Workflow
+# ==========================================
+langchain
+langchain-core
+langchain-groq
+langgraph
+groq
+
+# ==========================================
+# Document Processing
+# ==========================================
+pymupdf
+pdfplumber
+pypdf
+pillow
+pandas
+openpyxl
+xlrd
+pytesseract
+
+# ==========================================
+# Financial Analysis & Machine Learning
+# ==========================================
+numpy
+scipy
+scikit-learn
+xgboost
+shap
+joblib
+
+# ==========================================
+# Observability
+# ==========================================
+logfire
+
+# ==========================================
+# Authentication & Security
+# ==========================================
+pyjwt
+pwdlib[argon2]
+cryptography
+
+# ==========================================
+# Development & Testing
+# ==========================================
+pytest
+pytest-cov
+pytest-asyncio
+ruff
+mypy
