@@ -1,6 +1,6 @@
+
 from contextlib import asynccontextmanager
 from logging import basicConfig, getLogger
-from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -8,7 +8,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from backend.app.api.routes.cases import router as cases_router
 from backend.app.api.routes.documents import router as documents_router
 from backend.app.api.routes.health import router as health_router
+from backend.app.api.routes import evidence
+from backend.app.api.routes.risk_assessment import (
+    router as risk_assessment_router,
+)
 from backend.app.core.config import get_settings
+
 
 settings = get_settings()
 
@@ -72,14 +77,22 @@ def create_app() -> FastAPI:
         CORSMiddleware,
         allow_origins=origins,
         allow_credentials=False,
-        allow_methods=["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
+        allow_methods=[
+            "GET",
+            "POST",
+            "PATCH",
+            "DELETE",
+            "OPTIONS",
+        ],
         allow_headers=["Content-Type", "Authorization"],
     )
 
-
+    # Register API routers.
     app.include_router(health_router)
     app.include_router(cases_router)
     app.include_router(documents_router)
+    app.include_router(evidence.router)
+    app.include_router(risk_assessment_router)
 
     return app
 
