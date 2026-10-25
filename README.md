@@ -647,8 +647,6 @@ Run these commands to confirm results in your own environment.
 
 ## Demo and Screenshots
 
-Add screenshots to `docs/screenshots/` using the names below and swap in the images.
-
 | Screen | File |
 |---|---|
 | Landing page | `docs/screenshots/01-landing.png` |
